@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>決断支援アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>決断支援アプリ</h1>
+        </header>
+
+        <main>
+            <!-- 選択肢入力セクション -->
+            <section class="input-section">
+                <label for="choices-input">選択肢を入力してください（カンマまたは改行区切り）:</label>
+                <textarea 
+                    id="choices-input" 
+                    placeholder="例: ラーメン,カレー,パスタ&#10;または&#10;ラーメン&#10;カレー&#10;パスタ"
+                    rows="4"
+                    aria-describedby="input-help"
+                ></textarea>
+                <div id="input-help" class="help-text">複数の選択肢をカンマ（,）または改行で区切って入力してください</div>
+                <button id="decide-btn" class="decide-btn" aria-describedby="decide-help">決める！</button>
+                <div id="decide-help" class="help-text">入力した選択肢の中からランダムに1つを選びます</div>
+            </section>
+
+            <!-- 結果表示セクション -->
+            <section class="result-section">
+                <div id="result-display" class="result-display" role="status" aria-live="polite">
+                    <span class="result-label">結果:</span>
+                    <span id="result-text" class="result-text">ここに結果が表示されます</span>
+                </div>
+            </section>
+
+            <!-- 履歴セクション -->
+            <section class="history-section">
+                <div class="history-header">
+                    <h2>履歴</h2>
+                    <button id="clear-all-btn" class="clear-all-btn" aria-describedby="clear-help">全履歴削除</button>
+                </div>
+                <div id="clear-help" class="help-text">すべての履歴を削除します（元に戻せません）</div>
+                <div id="history-list" class="history-list" role="region" aria-label="決断履歴">
+                    <div class="no-history">まだ履歴がありません</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
